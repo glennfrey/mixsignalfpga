@@ -1,6 +1,3 @@
-# mixsignalfpga
-Mixed Signal SoC (RISC-V based Core + PLL) on FPGA
-
 ### ABOUT THE WORKSHOP
 Mixed Signal SoC (RISC-V based Core + PLL) on FPGA
 ### AUTHOR OF THE WORKSHOP
@@ -28,15 +25,56 @@ Founder of RedwoodEDA Inc.
 ## L1 Introduction 
 ![](mixfpga/mixfpga.png)
 ## L2 RVMYTH RISC-V Core
+Here we are using the RISC-V core that we made during RISC-V Myth workshop.
+RISC-V featutes are:
+- RISC-V ISA - Base Integer RV32I
+- Written in TL-Verilog
+- 5 Staged Pipelined Processor
+- Register File Bypassed technique is used to mitigate data hazards
+- B-type and J-tpe instruction takes extra 2 cycle to operate
+- RVMYTH currently supports only the cpu core itself with a small instruction memory and data memory.
 ## L3 TL Verilog
+TL-Verilog is a Verilog implementation of TL-X, a language extension defined as a wrapper to any HDL to extend it with transactional level modelling.
+Simple: You will never be trip up by blocking vs nonblocking assignments, packed vs unpacked datatypes, generate and always blocks, reg vs wire vs logic vs bit.
+Powerful: Timing Abstract to pipeline which make retiming easy and safe.
 ## L4 Why FPGAs?
+FPGA is reconfigurable unlike ASIC which is application specific therefore not reconfigurable.
+FPGA prototyping - used for verificaiton. While ASIC respin is highly expensive.
+FPGA time taken to design is comparatively less than ASIC like about 1 month. ASIC time taken to design complex SoC nearly requires 1 year.
+##### FPGA board used:
+Zedboard Zynq-7000 ARM/FPGA SoC Development Board
 ## L5 Makerchip
+##### Tools used:
+Makerchip:Makerchip is a free web-based IDE as well as available as makerchip-app, a virtual desktop application for developing high-quality integrated circuits. You can code, compile, simulate, and debug Verilog designs, all from your browser. Your code, block diagrams, and waveforms are tightly integrated.
+
+Icarus Verilog:Icarus Verilog is a Verilog simulation and synthesis tool.
+
+GTKWave:GTKWave is a waveform viewer.
+
+Xilinx Vivado:Xilixn Vivado provides complete SoC-strength, IP-centric and system-centric, next generation development environment. Currently, this project is done using Vivado HL Design Edition 2019.1.
+
 ## L6 TLV to RTL
+Installtion and Overview of Sandpiper
+SandPiper is a code generator that generates readable, well-structured, Verilog or SystemVerilog code from the given TL-Verilog code.
+SandPiper SaaS Edition runs as a microservice in the cloud to support easy open-source development. Install Sanpiper SaaS Edition for this project.
+To run locally, SandPiper Education Edition can be requested from RedwoodEDA
 ![](mixfpga/mixfpga_vfiles.png)
+##### Steps to convert TL-Verilog to Verilog or SystemVerilog
+- Install Sandpiper SaaS (https://pypi.org/project/sandpiper-saas/)
+- git clone https://github.com/shivanishah269/vsdfpga.git
+- cd vsdfpga/verilog
+- sandpiper-saas -i rvmyth.tlv -o rvmyth.v --iArgs
 ![](mixfpga/mixfpga_vfiles_rvmyth.png)
 ## L7 iverilog Simulation
+##### Steps for RTL Simulation of RVMYTH+PLL using iverilog
+- iverilog rvmyth_pll_tb.v rvmyth_pll.v clk_gate.v
+- ./a.out
+- gtkwave rvmyth_pll.vcd
+Here the simulation is generated using gtkwave
 ![](mixfpga/mixfpga_vfiles_gtkwave.png)
+Looking at the value of DAC signal the value increases, then peaks at 255 and deacreases again.
 ![](mixfpga/mixfpga_gtkwave_decimal.png)
+We can view this waveform in analog form as shown.
 ![](mixfpga/mixfpga_gtkwave_analog.png)
 ## L8 FPGA Steps To Create project Block Design
 FPGA Implementation: Block Design
