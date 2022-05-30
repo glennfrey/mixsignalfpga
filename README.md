@@ -34,15 +34,9 @@ Founder of RedwoodEDA Inc.
 ![](mixfpga2/mixfpga_vivado_constraint.png)
 ![](mixfpga2/mixfpga_vivado_synthesiscomplete.png)
 ![](mixfpga2/mixfpga_vivado_implementationfail.png)
-
 ![](mixfpga2/mixfpga_vivado_holdviolations.png)
-
 ![](mixfpga2/mixfpga_vivado_holdviolationspath70.png)
-
 ![](mixfpga2/mixfpga_vivado_holdviolationspath69.png)
-
-![](mixfpga2/mixfpga_vivado_constrainedited.png)
-
 ![](mixfpga2/mixfpga_vivado_implementationcomplete.png)
 ![](mixfpga2/mixfpga_vivado_implementationcomplete2.png)
 ![](mixfpga2/mixfpga_vivado_generatebitstream.png)
