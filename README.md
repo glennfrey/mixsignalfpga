@@ -1,9 +1,9 @@
-### ABOUT THE WORKSHOP
+# ABOUT THE WORKSHOP
 ## Mixed Signal SoC (RISC-V based Core + PLL) on FPGA
 
 ![bannerMixFPGA](https://user-images.githubusercontent.com/93269547/171051379-d18b3912-805b-4751-a3b7-9ab672790aef.png)
 
-### AUTHOR OF THE WORKSHOP
+# AUTHOR OF THE WORKSHOP
 #### Shivani Shah
 #### Mr. Kunal Ghosh - Co-founder of VLSI System Design (VSD) Corporation Private Limited
 #### Mr. Steve Hoover - Founder of RedwoodEDA Inc.
